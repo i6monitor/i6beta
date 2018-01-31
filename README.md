@@ -1,25 +1,20 @@
-# i-6-1
+# i6beta
 
-a [Sails v1](https://sailsjs.com) application
+Versi penggodhogan i6, dibangun diatas [sails](https://www.sailsjs.com).
 
+## Untuk apa sih?
+Aplikasi untuk monitoring,kontrol,report,analisis.
+Pokoknya intinya itu.
 
-### Links
-
-+ [Get started](https://sailsjs.com/get-started)
-+ [Sails framework documentation](https://sailsjs.com/documentation)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
+### Driver komunikasi yang sudah diuji
++ SIEMENS SIMATIC S7 TCP untuk S7-300, S7-300, S7-400 cek di [npm](https://www.npmjs.com/package/i6-driver-s7ip) atau [github](https://github.com/annlumia/i6-driver-s7ip)
++ ModBus TCP cek di [npm](https://www.npmjs.com/package/i6-driver-modbus) atau [github](https://github.com/annlumia/i6-driver-modbus)
 
 
-### Version info
+## Kontribusi?
 
-This app was originally generated on Tue Jan 30 2018 00:58:08 GMT+0700 (SE Asia Standard Time) using Sails v1.0.0-42 _(internally: [`sails-generate@1.15.0`](https://github.com/balderdashy/sails-generate/tree/v1.15.0/lib/core-generators/new))_.
+Sangat diharapkan.
 
+## Panduan Penggunaan?
 
-
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
-
+Belum sempat dibuat.
