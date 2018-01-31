@@ -130,3 +130,9 @@ lib-cov
 *.out
 *.pid
 
+
+# Vs Code Configuration
+.vscode
+
+# User data
+user_data
