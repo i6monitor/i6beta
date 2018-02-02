@@ -12,11 +12,12 @@ module.exports = {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-    name : {
-      type : 'string',
-      required : true,
-      unique : true
-    },
+    
+    // name : {
+    //   type : 'string',
+    //   required : true,
+    //   unique : true
+    // },
 
     security : {
       type : 'number',

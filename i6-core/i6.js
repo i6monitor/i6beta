@@ -1,6 +1,12 @@
 var async = require('async');
 var path = require('path');
 
+//Expose as global variabel
+var exposeGlobal = require(path.join(__dirname, 'global.js'));
+_.forEach(exposeGlobal, function(val, key) {
+    global[key] = val;
+});
+
 //Buat i6 sebagai variabel global
 global.i6 ={};
 

@@ -21,6 +21,16 @@ module.exports.globals = {
 
   _: require('lodash'),
 
+
+  /****************************************************************************
+  *                                                                           *
+  * Whether to expose the locally-installed `moment` as a global variable     *
+  * making it accessible throughout your app.                                 *
+  *                                                                           *
+  ****************************************************************************/
+
+  moment : require('moment'),
+
   /****************************************************************************
   *                                                                           *
   * Whether to expose the locally-installed `async` as a global variable      *

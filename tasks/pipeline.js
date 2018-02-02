@@ -37,8 +37,12 @@ var cssFilesToInject = [
   'node_modules/font-awesome/css/font-awesome.min.css',
   'node_modules/font-awesome-animation/dist/font-awesome-animation.min.css',
   'node_modules/simple-line-icons/css/simple-line-icons.css',
+ 
 
-  
+  //Summernote
+  'node_modules/summernote/dist/summernote-bs4.css',
+
+
   //bootstrap 4
   // 'node_modules/bootstrap/dist/css/bootstrap-grid.min.css',
   // 'node_modules/bootstrap/dist/css/bootstrap-reboot.min.css',
@@ -77,7 +81,13 @@ var jsFilesToInject = [
   'node_modules/popper.js/dist/umd/popper.min.js',
   'node_modules/tether/dist/js/tether.min.js',
   'node_modules/bootstrap/dist/js/bootstrap.min.js',
-  'node_modules/pace/pace.min.js',
+  'node_modules/pace-progress/pace.min.js',
+
+  //Moment
+  'node_modules/moment/min/moment.min.js',
+
+  //Summernote
+  'node_modules/summernote/dist/summernote-bs4.min.js',
 
   //Angular
   // 'node_modules/angular/angular.min.js',
@@ -106,6 +116,7 @@ var jsFilesToInject = [
   //vue library
   'node_modules/vue/dist/vue.min.js',
   'node_modules/vue-resource/dist/vue-resource.min.js',
+  'node_modules/vue-router/dist/vue-router.min.js',
 
   // All of the rest of your custom client-side js files will be injected here,
   // in no particular order.  To customize the ordering, add additional items

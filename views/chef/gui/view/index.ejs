@@ -1,83 +1,50 @@
-<div class="row">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-header">
-        <i class="fa fa-align-justify"></i> Simple Table
-      </div>
-      <div class="card-body">
-        <table class="table table-responsive-sm">
-          <thead>
-            <tr>
-              <th>Username</th>
-              <th>Date registered</th>
-              <th>Role</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Samppa Nori</td>
-              <td>2012/01/01</td>
-              <td>Member</td>
-              <td>
-                <span class="badge badge-success">Active</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Estavan Lykos</td>
-              <td>2012/02/01</td>
-              <td>Staff</td>
-              <td>
-                <span class="badge badge-danger">Banned</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Chetan Mohamed</td>
-              <td>2012/02/01</td>
-              <td>Admin</td>
-              <td>
-                <span class="badge badge-secondary">Inactive</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Derick Maximinus</td>
-              <td>2012/03/01</td>
-              <td>Member</td>
-              <td>
-                <span class="badge badge-warning">Pending</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Friderik Dávid</td>
-              <td>2012/01/21</td>
-              <td>Staff</td>
-              <td>
-                <span class="badge badge-success">Active</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#">Prev</a>
-          </li>
-          <li class="page-item active">
-            <a class="page-link" href="#">1</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">2</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">3</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">4</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </div>
+<div class="card mb-0">
+  <div class="card-header">
+    <div class="" role="group" aria-label="Button group">
+      <a class="btn btn-outline-secondary mt-0" data-toggle="tooltip" title data-original-title="Create new view" data-action="form_add">
+        <i class="icon-doc "></i>
+      </a>
+      <a class="btn btn-outline-secondary mt-0" data-toggle="tooltip" title data-original-title="Delete selected view" data-action="delete_multiple">
+        <i class="icon-trash"></i>
+      </a>
     </div>
   </div>
-</div>
+
+  <div class="card-body row">
+    <% views.forEach((view)=>{ %>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="card">
+          <div class="card-header px-3 py-2">
+            <i class="fa fa-<%= view.icon %>"></i>
+            <%= view.title %>
+              <!-- <i class="icon-options-vertical icons float-right font-lg"></i> -->
+              <div class="btn-group float-right">
+                <a class="btn btn-sm  mt-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="icon-options-vertical"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(31px, 23px, 0px); top: 0px; left: 0px; will-change: transform;">
+                  <div class="dropdown-header text-center">
+                    <strong>Options</strong>
+                  </div>
+                  <a class="dropdown-item" href="#">
+                    <i class="fa fa-edit"></i> Edit</a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fa fa-undo"></i> Restore last backup</a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fa fa-trash"></i> Delete</a>
+                </div>
+              </div>
+          </div>
+          <div class="card-body p-3 clearfix align-middle">
+            <i class="fa fa-<%= view.icon %> bg-primary p-3 font-2xl mr-3 float-left"></i>
+            <div class="text-muted font-xs">
+              C :
+              <%= moment(view.createdAt).format('DD MMM YYYY HH:mm:ss') %>
+                <br> U :
+                <%= moment(view.updatedAt).format('DD MMM YYYY HH:mm:ss') %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+  </div>
