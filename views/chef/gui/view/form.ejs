@@ -1,12 +1,12 @@
 <div class="card mb-0">
   <div class="card-header">
     <div class=" pull-right" role="group" aria-label="Button group">
-      <a class="btn btn-warning mt-0" data-action="cancel_edit" href="javascript:void(0)">
-        <i class="icon-close "></i> &nbsp;Cancel</a>
+      <a class="btn btn-warning mt-0" data-action="cancel" href="javascript:void(0)">
+        <i class="icon-close "></i> Cancel</a>
       <a class="btn btn-success mt-0" data-action="reset_edit" href="javascript:void(0)">
-        <i class="icon-refresh"></i> &nbsp;Reset</a>
+        <i class="icon-refresh"></i> Reset</a>
       <a class="btn btn-primary mt-0" data-action="create" href="javascript:void(0)">
-        <i class="fa fa-save"></i> &nbsp;Save</a>
+        <i class="fa fa-save"></i> Save</a>
     </div>
   </div>
 
@@ -33,7 +33,7 @@
 
       <div class="form-group row">
         <div class="col-12">
-          <textarea data-name="code" value="<%= model.code %>" id="summernote" style="width:100%;"></textarea>
+          <textarea data-name="code" data-format="summernote" id="summernote" style="width:100%;"></textarea>
         </div>
       </div>
 
@@ -41,3 +41,17 @@
 
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', fn, false);
+
+  function fn() {
+    var code = '<%= model.code %>';
+    $('#summernote').summernote('code', code);
+
+    $('#summernote').on('click', function () {
+      console.log($('summernote').summernote('code'));
+    });
+  }
+
+</script>

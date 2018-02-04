@@ -13,7 +13,7 @@ $(document).ready(function(){
 
     //Create router
     const router = new VueRouter({
-        routes // short for `routes: routes`
+         // short for `routes: routes`
     })
 
 
@@ -33,7 +33,7 @@ $(document).ready(function(){
     //     }
 
     // });
-        router
+        //router
     }).$mount('#i6app');
     // console.log(i6);
 

@@ -1,31 +1,32 @@
 <% var APP = typeof(app)=='undefined' ? {} : app %>
 
 
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-  <meta name="author" content="Łukasz Holeczek">
-  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,Angular 2,Angular4,Angular 4,jQuery,CSS,HTML,RWD,Dashboard,React,React.js,Vue,Vue.js">
-  <link rel="shortcut icon" href="img/favicon.png">
-  <title>i6 || Auto Log Sheet</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,Angular 2,Angular4,Angular 4,jQuery,CSS,HTML,RWD,Dashboard,React,React.js,Vue,Vue.js">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>i6 || Auto Log Sheet</title>
 
-  <!--STYLES-->
-  <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/node_modules/font-awesome-animation/dist/font-awesome-animation.min.css">
-  <link rel="stylesheet" href="/node_modules/simple-line-icons/css/simple-line-icons.css">
-  <link rel="stylesheet" href="/node_modules/summernote/dist/summernote-bs4.css">
-  <link rel="stylesheet" href="/styles/app.css">
-  <link rel="stylesheet" href="/styles/importer.css">
-  <link rel="stylesheet" href="/styles/style.min.css">
-  <!--STYLES END-->
-</head>
+    <!--STYLES-->
+    <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/node_modules/font-awesome-animation/dist/font-awesome-animation.min.css">
+    <link rel="stylesheet" href="/node_modules/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/node_modules/summernote/dist/summernote-bs4.css">
+    <link rel="stylesheet" href="/styles/app.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/style.min.css">
+    <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <!--STYLES END-->
+  </head>
 
-<!-- BODY options, add following classes to body to change options
+  <!-- BODY options, add following classes to body to change options
 
 // Header options
 1. '.header-fixed'					- Fixed Header
@@ -53,82 +54,100 @@
 
 -->
 
-<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden" id="i6app">
-  <!-- Page Header -->
-  <%- include header %>
-  <!-- /Page Header -->
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden" id="i6app">
+    <!-- Page Header -->
+    <%- include header %>
+      <!-- /Page Header -->
 
 
-  <div class="app-body">
-  
-    <!-- Sidebar -->
-    <%- include sidebar %>
-    <!-- /Sidebar -->
+      <div class="app-body">
+
+        <!-- Sidebar -->
+        <%- include sidebar %>
+          <!-- /Sidebar -->
 
 
-    <!-- Main content -->
-    <main class="main" data-app="<%= APP.name || 'basic' %>">
+          <!-- Main content -->
+          <main class="main" data-app="<%= APP.name || 'basic' %>">
 
-      <!-- Breadcrumb -->
-      <%- include breadcrumb %>
-      <!-- /Breadcrumb -->
+            <!-- Breadcrumb -->
+            <%- include breadcrumb %>
+              <!-- /Breadcrumb -->
 
-      <!-- Container Fluid -->
-      <div class="container-fluid">
-        <div class="animated fadeIn">
-          <%- body %>
-        </div>
+              <!-- Container Fluid -->
+              <div class="container-fluid">
+                <div class="animated fadeIn">
+                  <%- body %>
+                </div>
+              </div>
+              <!-- /Container Fluid -->
+
+          </main>
+          <!-- /Main COntent -->
+
+          <!-- Aside -->
+          <%- include aside %>
+            <!-- /Aside -->
+
       </div>
-      <!-- /Container Fluid -->
 
-    </main>
-    <!-- /Main COntent -->
+      <!-- Footer -->
+      <%- include footer %>
+        <!-- /Footer -->
 
-    <!-- Aside -->
-    <%- include aside %>
-    <!-- /Aside -->
+        <script>
+          var i6 = {};
 
-  </div>
+        </script>
 
-  <!-- Footer -->
-  <%- include footer %>
-  <!-- /Footer -->  
-  
-  <script>
-    var i6 = {};
-  </script>
-  
-  <script src="/dependencies/sails.io.js" autoConnect="false" environtment= "<%=process.env.NODE_ENV %>"</script></script>
+        <script src="/dependencies/sails.io.js" autoConnect="false" environtment="<%=process.env.NODE_ENV %>" </script></script>
 
-  <!--TEMPLATES-->
-  <script type="text/javascript" src="/jst.js"></script>
-  <!--TEMPLATES END-->
-    
-  <!--SCRIPTS-->
-  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
-  <script src="/node_modules/tether/dist/js/tether.min.js"></script>
-  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="/node_modules/pace-progress/pace.min.js"></script>
-  <script src="/node_modules/moment/min/moment.min.js"></script>
-  <script src="/node_modules/summernote/dist/summernote-bs4.min.js"></script>
-  <script src="/node_modules/vue/dist/vue.min.js"></script>
-  <script src="/node_modules/vue-resource/dist/vue-resource.min.js"></script>
-  <script src="/node_modules/vue-router/dist/vue-router.min.js"></script>
-  <script src="/js/app.js"></script>
-  <script src="/i6/i6.crud.js"></script>
-  <script src="/i6/i6.js"></script>
-  <script src="/i6/i6.router.js"></script>
-  <script src="/i6/i6.socket.js"></script>
-  <script src="/i6/i6.tooltip.js"></script>
-  <script src="/i6/i6.view.realtime.js"></script>
-  <!--SCRIPTS END-->
+        <!--TEMPLATES-->
+        <script type="text/javascript" src="/jst.js"></script>
+        <!--TEMPLATES END-->
 
-  <script>
-    $(document).ready(function(){
-      $('#summernote').summernote();
-    });
-  </script>
-</body>
+        <!--SCRIPTS-->
+        <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="/node_modules/tether/dist/js/tether.min.js"></script>
+        <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/node_modules/pace-progress/pace.min.js"></script>
+        <script src="/node_modules/moment/min/moment.min.js"></script>
+        <script src="/node_modules/summernote/dist/summernote-bs4.min.js"></script>
+        <script src="/dependencies/lodash.js"></script>
+        <script src="/node_modules/vue/dist/vue.min.js"></script>
+        <script src="/node_modules/vue-resource/dist/vue-resource.min.js"></script>
+        <script src="/node_modules/vue-router/dist/vue-router.min.js"></script>
+        <script src="/js/app.js"></script>
+        <script src="/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+        <script src="/i6/i6.crud.js"></script>
+        <script src="/i6/i6.js"></script>
+        <script src="/i6/i6.router.js"></script>
+        <script src="/i6/i6.socket.js"></script>
+        <script src="/i6/i6.tooltip.js"></script>
+        <script src="/i6/i6.view.realtime.js"></script>
+        <!--SCRIPTS END-->
 
-</html>
+        <script>
+          $(document).ready(() => {
+            var vueapp = new Vue({
+              el: '#monitoring',
+
+              data : {
+                tags: {}
+              },
+
+              mounted: function () {
+                var socket_view = io.sails.connect();
+                socket_view.on('realtime_update', function (payload) {
+                  this.tags = payload;
+                  console.log(this.tags);
+                }.bind(this))
+              }
+            });
+          });
+
+        </script>
+  </body>
+
+  </html>

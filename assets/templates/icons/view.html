@@ -1,12 +1,35 @@
-<div class="col-lg-3 col-md-6">
-    <div class="card">
-        <div class="card-body p-3 clearfix">
-        <i class="fa fa-home bg-primary p-3 font-2xl mr-3 float-left"></i>
-        <div class="h5 text-primary mb-0 mt-2">{{title}}</div>
-        <div class="text-muted text-uppercase font-weight-bold font-xs">{{name}}</div>
-        </div>
-        <div class="card-footer px-3 py-2">
-        <a class="font-weight-bold font-xs btn-block text-muted" href="#"><i class="fa fa-edit"></i> Modify <i class="fa fa-angle-right float-right font-lg"></i></a>
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+  <div class="card">
+    <div class="card-header px-3 py-2">
+      <i class="fa fa-desktop"></i>
+      <%= view.title %>
+        <div class="btn-group float-right">
+          <a class="btn btn-sm  mt-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="icon-options-vertical"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(31px, 23px, 0px); top: 0px; left: 0px; will-change: transform;">
+            <div class="dropdown-header text-center">
+              <strong>Options</strong>
+            </div>
+            <a class="dropdown-item" href="/view/<%= view.id %>">
+              <i class="fa fa-eye"></i> View</a>
+            <a class="dropdown-item" href="javascript:void(0)" data-action="edit_document" data-id="<%= view.id %>">
+              <i class="fa fa-edit"></i> Edit</a>
+            <a class="dropdown-item" href="javascript:void(0)" data-action="restore_document" data-id="<%= view.id %>">
+              <i class="fa fa-undo"></i> Restore last backup</a>
+            <a class="dropdown-item" href="javascript:void(0)" data-action="delete_document" data-id="<%= view.id %>">
+              <i class="fa fa-trash"></i> Delete</a>
+          </div>
         </div>
     </div>
+    <div class="card-body p-3 clearfix align-middle">
+      <i class="fa fa-<%= view.icon %> bg-primary p-3 font-2xl mr-3 float-left"></i>
+      <div class="text-muted font-xs">
+        C :
+        <%= moment(view.createdAt).format('DD MMM YYYY HH:mm:ss') %>
+          <br> U :
+          <%= moment(view.updatedAt).format('DD MMM YYYY HH:mm:ss') %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -19,6 +19,7 @@ module.exports = function(grunt) {
     'concat',
     'uglify',
     'cssmin',
+    // 'copy:fonts',
     'linkAssetsBuildProd',
     'clean:build',
     'copy:build'

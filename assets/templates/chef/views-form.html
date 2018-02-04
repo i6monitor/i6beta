@@ -1,0 +1,50 @@
+<div class="card mb-0">
+    <!-- Card header -->
+    <div class="card-header">
+      <div class=" pull-right" role="group" aria-label="Button group">
+        <a class="btn btn-warning mt-0" data-action="cancel" href="javascript:void(0)">
+          <i class="icon-close "></i> Cancel</a>
+        <a class="btn btn-success mt-0" data-action="reset_edit" href="javascript:void(0)">
+          <i class="icon-refresh"></i> Reset</a>
+        <a class="btn btn-primary mt-0" data-action="create" href="javascript:void(0)">
+          <i class="fa fa-save"></i> Save</a>
+      </div>
+    </div>
+    <!-- /Card header -->
+  
+    <!-- Card body -->
+    <div class="card-body">
+      <form>
+        <div class="form-group row">
+          <div class="col-md-3">
+            <label>Title</label>
+            <input type="text" v-model="data.title" class="form-control" placeholder="Enter view title..">
+          </div>
+          <div class="col-md-3">
+            <label>Icon</label>
+            <input type="text" v-model="data.icon" class="form-control" placeholder="Font awesome icon.">
+            <span class="help-block text-secondary">Example :
+              <i>desktop</i> for
+              <i>fa-desktop</i>.</span>
+          </div>
+          <div class="col-md-3">
+            <label>Security Level</label>
+            <input type="number" v-model="data.security" class="form-control" placeholder="Enter security level..">
+          </div>
+        </div>
+  
+  
+        <!-- Code editor (summernote) -->
+        <div class="form-group row">
+          <div class="col-12">
+            <textarea data-name="code" data-format="summernote" id="summernote" style="width:100%;"></textarea>
+          </div>
+        </div>
+        <!-- /Code editor (summernote) -->
+  
+      </form>
+  
+    </div>
+    <!-- /Card body -->
+
+  </div>

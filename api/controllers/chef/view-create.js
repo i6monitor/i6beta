@@ -15,14 +15,13 @@ module.exports = {
     },
     code : {
       type : 'string'
+    },
+    icon : {
+      type : 'string'
     }
   },
 
   exits: {
-
-    success: {
-      responseType: 'json'
-    },
 
     forbidden : {
       responseType : 'forbidden'
@@ -36,7 +35,7 @@ module.exports = {
     if(this.req.method.toUpperCase() !=='POST') return exits.forbidden();
     let model = await View.create(inputs);
     // Respond with view.
-    return exits.success(model);
+    return exits.success({message:'success', error : false});
 
   }
 

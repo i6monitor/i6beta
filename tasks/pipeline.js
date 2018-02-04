@@ -56,7 +56,10 @@ var cssFilesToInject = [
   // All of the rest of your custom `.css` files will be injected here,
   // in no particular order.  To customize the ordering, add additional
   // items here, _above_ this one.
-  'styles/**/*.css'
+  'styles/**/*.css',
+
+  //Sweetalert
+  'node_modules/sweetalert2/dist/sweetalert2.min.css',
 ];
 
 
@@ -126,6 +129,12 @@ var jsFilesToInject = [
   //Frontend app
   'app/controllers/**/*.js',
   'app/services/**/*.js',
+
+
+  //Sweetalert
+  'node_modules/sweetalert2/dist/sweetalert2.min.js',
+
+
 
   //i6 lib
   'i6/*.js',

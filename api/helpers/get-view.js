@@ -10,7 +10,7 @@ module.exports = {
   inputs: {
     limit : {
       type : 'number',
-      defaultsTo : 10
+      defaultsTo : 12
     },
     
     page : {

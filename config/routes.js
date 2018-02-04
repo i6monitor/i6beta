@@ -30,7 +30,7 @@ module.exports.routes = {
 
   'GET /view' : {action : 'view/render'},
 
-  'GET /view/:view' : {action : 'view/render'},
+  'GET /view/:id' : {action : 'view/render'},
 
 
   /***************************************************************************
@@ -74,9 +74,23 @@ module.exports.routes = {
    ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝         ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚══════╝
 */                                                                             
   
+  /*==============================================================================
+   * View
+   =============================================================================*/
   'GET /chef/view' : {action : 'chef/view-index'},
+  'GET /chef/view/list' : {action : 'chef/view-list'},
   'GET /chef/view/form_add' : {action : 'chef/view-form-add'},
+  'GET /chef/view/form_edit' : {action : 'chef/view-form-edit'},
+  
   'POST /chef/view/create' : {action : 'chef/view-create'},
+  'POST /chef/view/update' : {action : 'chef/view-update'},
+  'POST /chef/view/delete' : {action : 'chef/view-delete'},
 
+  /*==============================================================================
+   * Navigation 
+   =============================================================================*/
+   'GET /chef/navigation' : {action : 'chef/nav-index'},
+   'GET /chef/navigation/form_add' : {action : 'chef/nav-form-add'},
+   'POST /chef/navigation/create' : {action : 'chef/nav-create'},
 
 };

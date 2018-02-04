@@ -1,17 +1,37 @@
-/*===============================================================
-    Render view dari model View
+module.exports = {
 
-=================================================================*/
-module.exports = function(req,res){
-    let view_name = req.param('view') || 'index';
-    if(view_name){
-        View.findOne({name:view_name}).exec((err,viewdata)=>{
-            if(viewdata){
-                return res.view('pages/render',{view : viewdata});
-            }else{
-                return res.view('pages/render',{view : {code : '<h3>View tidak ditemukan.</h3>'}});
-            }
-        });
 
+  friendlyName: 'Render 2',
+
+
+  description: '',
+
+
+  inputs: {
+
+  },
+
+
+  exits: {
+    success : {viewTemplatePath : 'rt/render'},
+    failure : {viewTemplatePath : 'rt/fail'}
+  },
+
+
+  fn: async function (inputs, exits) {
+    let id = this.req.params.id;
+    let view_rt;
+    
+    if(id){
+      view_rt = await View.findOne({id:id});
     }
-}
+
+    //Sukses mendapatkan view
+    if(view_rt) return exits.success({view_rt : view_rt});  
+
+    //Jika view tidak ditemukan atau view default tidak ada
+    throw exits.failure();
+  }
+
+
+};
