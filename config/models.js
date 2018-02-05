@@ -154,10 +154,11 @@ module.exports.models = {
 
   //Restore
   restore: async function(criteria, destination){
-    // if(typeof(criteria)=='undefined') return;
-    // var self = this;
-    // var current_screen = await self.findOne(criteria);
-    // return await destination.updateOrCreate({id:criteria.id}, current_screen);
+    if(typeof(criteria)=='undefined') return;
+    var self = this;
+    var current_screen = await destination.findOne({id:criteria.id});
+    if(current_screen) return await self.updateOrCreate({id:criteria.id}, current_screen);
+  
   },
 
 
