@@ -48,7 +48,13 @@ module.exports.routes = {
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
+  'GET /api/chef/screens': {action: 'chef/screens/find'},
+  'POST /api/chef/screens/screen': {action: 'chef/screens/screen/create'},
+  'GET /api/chef/screens/screen/:id': {action: 'chef/screens/screen/find'},
+  'PATCH /api/chef/screens/screen': {action: 'chef/screens/screen/update'},
+  'DELETE /api/chef/screens/screen': {action: 'chef/screens/screen/destroy'},
 
+  //'GET /api/chef/navigations/get': {action: 'navigations/get'},
 
   'PUT /login' : {action : 'user/login'},
   'GET /logout' : {action : 'user/logout'},
