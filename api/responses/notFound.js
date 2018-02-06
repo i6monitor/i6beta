@@ -63,7 +63,7 @@ module.exports = function notFound(optionalData) {
   }
   // Set status code and send response data.
   else {
-    return res.status(statusCodeToSet).send({Message : 'Notfound'});
+    return res.status(statusCodeToSet).send({Message : 'Not Found'});
   }
 
 };

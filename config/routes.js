@@ -54,6 +54,13 @@ module.exports.routes = {
   'PATCH /api/chef/screens/screen': {action: 'chef/screens/screen/update'},
   'DELETE /api/chef/screens/screen': {action: 'chef/screens/screen/destroy'},
 
+  /**
+   * Tags 
+   */
+  'GET /api/runtime/tags': {action: 'runtime/tags/find'},
+  'GET /api/runtime/tags/:device': {action: 'runtime/tags/find'},
+  'GET /api/runtime/tags/:device/:tag': {action: 'runtime/tags/find'},
+
   //'GET /api/chef/navigations/get': {action: 'navigations/get'},
 
   'PUT /login' : {action : 'user/login'},
