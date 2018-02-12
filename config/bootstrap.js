@@ -63,7 +63,7 @@ module.exports.bootstrap = async function(done) {
   }//∞
 
   // By convention, this is a good place to set up fake data during development.
-  await User.createEach([
+  await Si6_user.createEach([
     { emailAddress: 'chef@i6.io', fullName: 'Inem Chef', isSuperAdmin: true, isChef : true, password: await sails.stdlib('passwords').hashPassword('senyumibu') },
     { emailAddress: 'user@i6.io', fullName: 'Basic User', isSuperAdmin: false, password: await sails.stdlib('passwords').hashPassword('user1234') },
     

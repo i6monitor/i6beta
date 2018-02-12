@@ -58,7 +58,6 @@ module.exports.routes = {
     * Screens
     */
   'GET /api/chef/screens': {action: 'chef/screens/find'},
-  'GET /api/chef/screens/subscribe': {action: 'chef/screens/subscribe'},
   'POST /api/chef/screens/screen': {action: 'chef/screens/screen/create'},
   'GET /api/chef/screens/screen/:id': {action: 'chef/screens/screen/find'},
   'PATCH /api/chef/screens/screen': {action: 'chef/screens/screen/update'},

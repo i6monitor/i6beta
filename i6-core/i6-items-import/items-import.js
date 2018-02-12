@@ -11,7 +11,7 @@ function importDefaultItem(next){
             if(file.slice(-3).toLocaleLowerCase() == '.js'){
                 let item = require(path.join(i6.path.item, file));
                 if(item.name != undefined && item.items.length > 0){
-                    Ds_item.findOrCreate({name : item.name}, item).exec((err,payload)=>{
+                    Si6_ds_item.findOrCreate({name : item.name}, item).exec((err,payload)=>{
                         if(err){
                             sails.log.error(`[i6-data-source] import default item failed. Item name "${item.name}"`);
                         }else{

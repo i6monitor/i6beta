@@ -34,7 +34,7 @@ module.exports = {
 
   fn: async function (inputs, exits) {
 
-    var screen = await Si6_screen.create(inputs);
+    var screen = await Si6_screen.create(inputs).meta({fetch: true});;
     return exits.success(screen || {message: 'success', error: false});
 
   }

@@ -26,7 +26,7 @@ module.exports = {
  */
 function getDeviceList(next){
     i6.log.info('[i6-device] get devices configuration.');
-    Device.find().exec((err,devices)=>{
+    Si6_device.find().exec((err,devices)=>{
         if(err){
             i6.log.error('[i6-device] failed to get devices configuration.');
         }else{
@@ -55,7 +55,7 @@ function initDeviceDataSource(devices, next){
             if(typeof(i6.dataSource[device.name])=='undefined') i6.dataSource[device.name] = {};
             
             //i6.dataSource.PLC1.temperature
-            Ds_item.findOne({name:device.items}).exec((err, payload)=>{
+            Si6_ds_item.findOne({name:device.items}).exec((err, payload)=>{
                 _.forEach(payload.items, item=>{
                     item.value = item.initialValue || '######';
                     i6.dataSource[device.name][item.name] = item;

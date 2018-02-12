@@ -49,6 +49,10 @@ module.exports = {
 
   },
 
+  beforeCreate: async function(values, callback) {
+    callback();
+  },
+
   beforeUpdate: async function(values, callback){
     var criteria = values.where? values.where : values;
     await Si6_screen.backup(criteria, Si6_screen_backup);
@@ -62,8 +66,8 @@ module.exports = {
     callback();
   },
 
-  afterCreate: function (values, callback) {
-    sails.socket.blast('model_si6_screen', {
+  afterCreate: async function(values, callback) {
+    sails.sockets.blast('model_si6_screen', {
       action: 'created',
       values: values 
     });
@@ -71,8 +75,8 @@ module.exports = {
     callback();
   },
   
-  afterUpdate: function(values, callback){
-    sails.socket.blast('model_si6_screen', {
+  afterUpdate: async function(values, callback){
+    sails.sockets.blast('model_si6_screen', {
       action: 'updated',
       values: values 
     });
@@ -80,8 +84,8 @@ module.exports = {
     callback();
   },
   
-  afterDestroy: function(values, callback){
-    sails.socket.blast('model_si6_screen', {
+  afterDestroy: async function(values, callback){
+    sails.sockets.blast('model_si6_screen', {
       action: 'destroyed',
       values: values 
     });
@@ -89,5 +93,4 @@ module.exports = {
     callback();
   },
 
-};
-
+}

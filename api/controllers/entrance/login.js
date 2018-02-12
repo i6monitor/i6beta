@@ -27,7 +27,7 @@ module.exports = {
 
 
   fn: async function (inputs, exits) {
-    var user = await User.findOne({emailAddress:inputs.emailAddress});
+    var user = await Si6_user.findOne({emailAddress:inputs.emailAddress});
 
     // If the password doesn't match, then also exit thru "badCombo".
     await sails.stdlib('passwords').checkPassword(inputs.password, user.password)

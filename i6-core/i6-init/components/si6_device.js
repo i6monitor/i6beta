@@ -1,4 +1,4 @@
-module.exports.Device = [		
+module.exports.Si6_Device = [		
 {		
     name : 'hrsg1',		
     host : '182.253.210.3',		

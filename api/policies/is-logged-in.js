@@ -6,7 +6,7 @@ module.exports = async function (req, res, proceed) {
   try {
     let decryptedSessionStorageToken = TokenService.verify(token);
 
-    User
+    Si6_user
       .findOne({
         id: decryptedSessionStorageToken.id
       })
