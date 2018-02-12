@@ -146,7 +146,7 @@ module.exports.models = {
 
   //Backup
   backup: async function(criteria, destination){
-    if(typeof(criteria)=='undefined') return;
+    if(typeof(criteria)=='undefined' || typeof(criteria.id)=='undefined') return;
     var self = this;
     var current_screen = await self.findOne({id:criteria.id});
     if(current_screen) return await destination.updateOrCreate({id:criteria.id}, current_screen);
@@ -154,7 +154,7 @@ module.exports.models = {
 
   //Restore
   restore: async function(criteria, destination){
-    if(typeof(criteria)=='undefined') return;
+    if(typeof(criteria)=='undefined' || typeof(criteria.id)=='undefined') return;    
     var self = this;
     var current_screen = await destination.findOne({id:criteria.id});
     if(current_screen) return await self.updateOrCreate({id:criteria.id}, current_screen);

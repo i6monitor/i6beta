@@ -24,13 +24,13 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'GET /': {action : 'view-homepage-or-redirect'},
+  // 'GET /': {action : 'view-homepage-or-redirect'},
 
-  'GET /login' : {action : 'user/view-login'},
+  // 'GET /login' : {action : 'user/view-login'},
 
-  'GET /view' : {action : 'view/render'},
+  // 'GET /view' : {action : 'view/render'},
 
-  'GET /view/:id' : {action : 'view/render'},
+  // 'GET /view/:id' : {action : 'view/render'},
 
 
   /***************************************************************************
@@ -48,7 +48,17 @@ module.exports.routes = {
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
+
+  /**
+   * Entrance
+   */
+  'POST /api/entrance/login': {action: 'entrance/login'},
+
+   /**
+    * Screens
+    */
   'GET /api/chef/screens': {action: 'chef/screens/find'},
+  'GET /api/chef/screens/subscribe': {action: 'chef/screens/subscribe'},
   'POST /api/chef/screens/screen': {action: 'chef/screens/screen/create'},
   'GET /api/chef/screens/screen/:id': {action: 'chef/screens/screen/find'},
   'PATCH /api/chef/screens/screen': {action: 'chef/screens/screen/update'},
@@ -63,9 +73,9 @@ module.exports.routes = {
 
   //'GET /api/chef/navigations/get': {action: 'navigations/get'},
 
-  'PUT /login' : {action : 'user/login'},
-  'GET /logout' : {action : 'user/logout'},
-  'GET /report' : {action : 'report/generate'},
+  // 'PUT /login' : {action : 'user/login'},
+  // 'GET /logout' : {action : 'user/logout'},
+  // 'GET /report' : {action : 'report/generate'},
   
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗
@@ -90,20 +100,20 @@ module.exports.routes = {
   /*==============================================================================
    * View
    =============================================================================*/
-  'GET /chef/view' : {action : 'chef/view-index'},
-  'GET /chef/view/list' : {action : 'chef/view-list'},
-  'GET /chef/view/form_add' : {action : 'chef/view-form-add'},
-  'GET /chef/view/form_edit' : {action : 'chef/view-form-edit'},
+  // 'GET /chef/view' : {action : 'chef/view-index'},
+  // 'GET /chef/view/list' : {action : 'chef/view-list'},
+  // 'GET /chef/view/form_add' : {action : 'chef/view-form-add'},
+  // 'GET /chef/view/form_edit' : {action : 'chef/view-form-edit'},
   
-  'POST /chef/view/create' : {action : 'chef/view-create'},
-  'POST /chef/view/update' : {action : 'chef/view-update'},
-  'POST /chef/view/delete' : {action : 'chef/view-delete'},
+  // 'POST /chef/view/create' : {action : 'chef/view-create'},
+  // 'POST /chef/view/update' : {action : 'chef/view-update'},
+  // 'POST /chef/view/delete' : {action : 'chef/view-delete'},
 
   /*==============================================================================
    * Navigation 
    =============================================================================*/
-   'GET /chef/navigation' : {action : 'chef/nav-index'},
-   'GET /chef/navigation/form_add' : {action : 'chef/nav-form-add'},
-   'POST /chef/navigation/create' : {action : 'chef/nav-create'},
+  //  'GET /chef/navigation' : {action : 'chef/nav-index'},
+  //  'GET /chef/navigation/form_add' : {action : 'chef/nav-form-add'},
+  //  'POST /chef/navigation/create' : {action : 'chef/nav-create'},
 
 };

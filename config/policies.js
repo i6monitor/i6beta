@@ -19,7 +19,13 @@ module.exports.policies = {
 
   '*': true,
 
-  'chef' : true,//'is-chef',
+  'runtime': {
+    '*' : 'is-logged-in'
+  },
+
+  'chef' : {
+    '*': true,
+  },
 
   //Bypass security untuk form login
   'user/login' : true,

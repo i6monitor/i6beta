@@ -59,4 +59,5 @@ module.exports.globals = {
 
   sails: true,
 
+  services: true,
 };

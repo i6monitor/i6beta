@@ -11,7 +11,7 @@ module.exports = {
 
 
   inputs: {
-    payload : {
+    id : {
       type : {}
     }
   },
@@ -24,7 +24,7 @@ module.exports = {
 
   fn: async function (inputs, exits) {
 
-    jwt.sign(inputs.payload, sails.config.jwt.secret, sails.config.jwt.options);
+    jwt.sign(inputs.id, sails.config.jwt.secret, sails.config.jwt.options);
     // All done.
     return exits.success();
 

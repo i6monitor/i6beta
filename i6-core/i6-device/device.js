@@ -92,7 +92,7 @@ function initDeviceConnection(next){
 
         try{
             i6.log.info(`[i6-device]   load driver "i6-driver-${deviceConfig.driver}"`);
-            var driver = require('i6-driver-s7ip');
+            var driver = require(`i6-driver-${deviceConfig.driver}`);
         }catch(e){
             i6.log.error(`[i6-device]   failed to load driver "${deviceConfig.driver}". Please check driver installation or try to run "npm i -s i6-driver ${deviceConfig.driver}".`);
             return nextDevice(null);
@@ -102,6 +102,12 @@ function initDeviceConnection(next){
         i6.devices[deviceName] = new driver(deviceConfig);
 
         let device = i6.devices[deviceName];
+
+        // Flag untuk mendeteksi bahwa ini adalah inisialisasi
+        //   digunakan untuk memanggil device berikutnya jika ini masih true.
+        //   Akan segera di reset dihapus jika inisialisasi selesai
+        device.initialization = true;
+
         device.on('connectionEvent', (payload)=>{
             let self = this;
             if(payload.error){
@@ -109,12 +115,15 @@ function initDeviceConnection(next){
             }else{
                 i6.log.info(`[i6-device][${payload.device.name}] ${payload.message}`);                
             }
-            
-            if(device.connectionRetryCount == 0) nextDevice(null);
-        });
 
-        device.on('valueUpdateEvent', (payload)=>{
-            //console.log(payload);
+            if(device.initialization){
+                // Lanjutkan ke device berikutnya
+                nextDevice(null);
+
+                // Jika ada event koneksi selanjutnya dianggap bukan inisialisasi lagi
+                // jadi jangan panggil function nextDevice
+                delete device.initialization;
+            }
         });
 
         /**
