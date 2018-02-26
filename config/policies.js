@@ -20,7 +20,7 @@ module.exports.policies = {
   '*': true,
 
   'runtime': {
-    '*' : 'is-logged-in'
+    '*' : true
   },
 
   'chef' : {

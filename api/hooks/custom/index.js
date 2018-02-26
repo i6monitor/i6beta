@@ -155,7 +155,7 @@ will be disabled and/or hidden in the UI.
             if (!req.session.userId) { return next(); }
 
             // Otherwise, look up the logged-in user.
-            var loggedInUser = await User.findOne({
+            var loggedInUser = await Si6_user.findOne({
               id: req.session.userId
             });
 
@@ -188,7 +188,7 @@ will be disabled and/or hidden in the UI.
             var MS_TO_BUFFER = 60*1000;
             var now = Date.now();
             if (loggedInUser.lastSeenAt < now - MS_TO_BUFFER) {
-              User.update({id: loggedInUser.id})
+              Si6_user.update({id: loggedInUser.id})
               .set({ lastSeenAt: now })
               .exec((err)=>{
                 if (err) {
@@ -211,8 +211,8 @@ will be disabled and/or hidden in the UI.
 
               // Exclude any fields corresponding with attributes that have `protect: true`.
               var sanitizedUser = _.extend({}, loggedInUser);
-              for (let attrName in User.attributes) {
-                if (User.attributes[attrName].protect) {
+              for (let attrName in Si6_user.attributes) {
+                if (Si6_user.attributes[attrName].protect) {
                   delete sanitizedUser[attrName];
                 }
               }//∞

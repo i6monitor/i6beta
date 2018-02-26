@@ -40,6 +40,10 @@ module.exports = {
       cookie: encryptedId,
       fullName: user.fullName,
     }
+
+    // Modify the active session instance.
+    this.req.session.userId = user.id;
+
     return exits.success(response_data);
 
   }

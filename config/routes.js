@@ -70,6 +70,11 @@ module.exports.routes = {
   'GET /api/runtime/tags/:device': {action: 'runtime/tags/find'},
   'GET /api/runtime/tags/:device/:tag': {action: 'runtime/tags/find'},
 
+  /**
+   *  Runtime API
+   */
+  'GET /api/runtime/screens': {action: 'runtime/screens'},
+
   //'GET /api/chef/navigations/get': {action: 'navigations/get'},
 
   // 'PUT /login' : {action : 'user/login'},
